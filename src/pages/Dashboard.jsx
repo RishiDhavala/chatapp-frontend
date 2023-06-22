@@ -237,7 +237,7 @@ messageRef?.current?.scrollIntoView({behaviour:'smooth'})
             )}
           </div>
         </div>
-       {messages?.messages?.length > 0 ? (<div className="flex">
+       <div className="flex">
           <div className="w-[85%] p-5">
             <Input
               className="rounded-full px-5 py-3"
@@ -258,7 +258,7 @@ messageRef?.current?.scrollIntoView({behaviour:'smooth'})
               className="  border border-primary p-[10px] rounded-3xl"
             />
           </div>
-        </div>):""}
+        </div>
       </div>
       <div className="w-[25%]">
         <div className="h-[30%] ">
