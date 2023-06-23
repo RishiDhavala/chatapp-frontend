@@ -4,6 +4,8 @@ import Img from "../assets/user.png";
 import send from "../assets/send-button.png";
 import {io} from 'socket.io-client'
 
+const BASE_URL=process.env.BASE_URL||'${BASE_URL}'
+
 const Dashboard = () => {
 
 
@@ -12,7 +14,7 @@ const Dashboard = () => {
     const logedInUser = JSON.parse(localStorage.getItem("user:detail"));
     const fetchChats = async () => {
       const res = await fetch(
-        `http://localhost:8000/api/chat/${logedInUser?.id}`,
+        `${BASE_URL}/api/chat/${logedInUser?.id}`,
         {
           method: "GET",
           headers: {
@@ -29,7 +31,7 @@ const Dashboard = () => {
 
   const fetchMessages = async (chatId, receiver) => {
     const response = await fetch(
-      `http://localhost:8000/api/message/${chatId}?senderId=${user?.id}&&receiverId=${receiver?.receiverId}`,
+      `${BASE_URL}/api/message/${chatId}?senderId=${user?.id}&&receiverId=${receiver?.receiverId}`,
       {
         method: "GET",
         headers: {
@@ -45,7 +47,7 @@ const Dashboard = () => {
   useEffect(() => {
     //const logedInUser=JSON.parse(localStorage.getItem('user:detail'))
     const fetchUsers = async () => {
-      const res = await fetch(`http://localhost:8000/api/users/${user.id}`, {
+      const res = await fetch(`${BASE_URL}/api/users/${user.id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -66,7 +68,7 @@ const Dashboard = () => {
         receiverId: messages?.receiver?.receiverId,
     })
    // console.log('sendmessage',messages?.chatId,user?.id,message,messages?.receiver?.receiverId)
-    const res = await fetch(`http://localhost:8000/api/message`, {
+    const res = await fetch(`${BASE_URL}/api/message`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -85,7 +87,7 @@ const Dashboard = () => {
 
 
 const createChat=async(e)=>{
-const res = await fetch(`http://localhost:8000/api/chat`,{
+const res = await fetch(`${BASE_URL}/api/chat`,{
   method:"POST",
   header:{
     "Content-type":"application/json"
