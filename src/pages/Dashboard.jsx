@@ -111,7 +111,7 @@ const res = await fetch(`http://localhost:8000/api/chat`,{
   //console.log("messages>>",messages);       
 
   useEffect(()=>{
-    setSocket(io('http://localhost:8080'))
+    setSocket(io())
   },[])
 
   useEffect(()=>{
