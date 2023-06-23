@@ -113,7 +113,7 @@ const res = await fetch(`${BASE_URL}/api/chat`,{
   //console.log("messages>>",messages);       
 
   useEffect(()=>{
-    setSocket(io('https://chat-with-me-server.onrender.com'))
+    setSocket(io('https://localhost:8080'))
   },[])
 
   useEffect(()=>{
