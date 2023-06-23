@@ -4,7 +4,7 @@ import Img from "../assets/user.png";
 import send from "../assets/send-button.png";
 import {io} from 'socket.io-client'
 
-const BASE_URL=process.env.BASE_URL||'${BASE_URL}'
+const BASE_URL=process.env.BASE_URL||'https://chat-with-me-server.onrender.com'
 
 const Dashboard = () => {
 
