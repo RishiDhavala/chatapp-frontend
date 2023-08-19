@@ -20,7 +20,7 @@ const navigate=useNavigate();
 const handleSubmit=async(e)=>{
 //console.log(data);
 e.preventDefault();
-const res=await fetch(`http://localhost:8000/api/${isSignUp?'register':'login'}`,{
+const res=await fetch(`https://chat-with-me-server.onrender.com/api/${isSignUp?'register':'login'}`,{
     method:'POST',
     headers:{
         'Content-type':'application/json'
